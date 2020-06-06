@@ -36,3 +36,8 @@
 @import "~bootstrap/scss/spinners";
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/print";
+
+// Custom styles
+@import './basic/mixins';
+@import './basic/basic';
+@import './components/components';
