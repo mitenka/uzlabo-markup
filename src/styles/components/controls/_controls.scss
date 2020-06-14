@@ -26,10 +26,11 @@
   &:disabled {
     opacity: $ctrl-disabled-opacity;
     @include box-shadow(none);
-    pointer-events: none;
+    cursor: $disabled-cursor;
 
     * {
       pointer-events: none;
+      cursor: $disabled-cursor;
     }
   }
 
@@ -49,6 +50,10 @@
     cursor: default;
   }
 
+  .material-icons {
+    font-size: inherit;
+  }
+
   &-sm {
     @include button-size($ctrl-padding-y-sm, $ctrl-padding-x-sm, $ctrl-font-size-sm, $ctrl-line-height-sm, $ctrl-border-radius);
   }
@@ -59,7 +64,7 @@
 
 }
 
-@mixin control-variant($color, $color-hover: darken($color, 15%), $active-background: transparent, $color-active: darken($color, 15%)) {
+@mixin control-variant($color, $color-hover: darken($color, 15%), $active-background: transparent, $color-active: darken($color, 15%), $color-disabled: $gray-90) {
   color: $color;
 
   @include hover {
@@ -73,7 +78,7 @@
 
   &.disabled,
   &:disabled {
-    color: $color;
+    color: $color-disabled;
     background-color: transparent;
   }
 

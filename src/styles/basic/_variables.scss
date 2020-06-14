@@ -79,7 +79,7 @@ $success:       $green;
 $info:          $cyan;
 $warning:       $yellow;
 $danger:        $red;
-$light:         $gray-95;
+$light:         $gray-90;
 $dark:          $gray-55;
 $accent: $purple;
 
@@ -95,7 +95,8 @@ $theme-colors: map-merge(
     "danger":     $danger,
     "light":      $light,
     "dark":       $dark,
-    "accent": $accent
+    "accent": $accent,
+    "base": $base
   ),
   $theme-colors
 );
@@ -135,7 +136,7 @@ $enable-grid-classes:                         true;
 $enable-pointer-cursor-for-buttons:           true;
 $enable-print-styles:                         true;
 $enable-responsive-font-sizes:                false;
-$enable-validation-icons:                     true;
+$enable-validation-icons:                     false;
 $enable-deprecation-messages:                 true;
 
 
@@ -251,6 +252,48 @@ $grid-gutter-width:           12px;
 $grid-row-columns:            6;
 
 
+// Cursors
+$cursor-types: (
+  auto,
+  default,
+  none,
+  context-menu,
+  help,
+  pointer,
+  progress,
+  wait,
+  cell,
+  crosshair,
+  text,
+  vertical-text,
+  alias,
+  copy,
+  move,
+  no-drop,
+  not-allowed,
+  all-scroll,
+  col-resize,
+  row-resize,
+  n-resize,
+  e-resize,
+  s-resize,
+  w-resize,
+  ne-resize,
+  nw-resize,
+  se-resize,
+  sw-resize,
+  ew-resize,
+  ns-resize,
+  nesw-resize,
+  nwse-resize,
+  zoom-in,
+  zoom-out,
+  grab,
+  grabbing
+) !default;
+
+$disabled-cursor: not-allowed;
+
 // Components
 //
 // Define common padding and border radius sizes and more.
@@ -346,9 +389,9 @@ $lead-font-weight:            300;
 
 $small-font-size:             80%;
 
-$text-muted:                  $gray-600;
+$text-muted:                  $gray-90;
 
-$blockquote-small-color:      $gray-600;
+$blockquote-small-color:      $gray-90;
 $blockquote-small-font-size:  $small-font-size;
 $blockquote-font-size:        $font-size-base * 1.25;
 
@@ -442,77 +485,77 @@ $btn-font-size:               1.14rem;
 $btn-line-height:             1.25;
 $btn-white-space:             null; // Set to `nowrap` to prevent text wrapping
 
-$btn-padding-y-sm:            $input-btn-padding-y-sm;
-$btn-padding-x-sm:            $input-btn-padding-x-sm;
-$btn-font-size-sm:            $input-btn-font-size-sm;
+$btn-padding-y-sm:            .5rem;
+$btn-padding-x-sm:            1rem;
+$btn-font-size-sm:            .9rem;
 $btn-line-height-sm:          $input-btn-line-height-sm;
 
-$btn-padding-y-lg:            $input-btn-padding-y-lg;
-$btn-padding-x-lg:            $input-btn-padding-x-lg;
-$btn-font-size-lg:            $input-btn-font-size-lg;
+$btn-padding-y-lg:            1rem;
+$btn-padding-x-lg:            3rem;
+$btn-font-size-lg:            1.5rem;
 $btn-line-height-lg:          $input-btn-line-height-lg;
 
-$btn-border-width:            $input-btn-border-width;
+$btn-border-width:           2px;
 
 $btn-font-weight:             600;
-$btn-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075);
+$btn-box-shadow:              none;
 $btn-focus-width:             $input-btn-focus-width;
-$btn-focus-box-shadow:        $input-btn-focus-box-shadow;
-$btn-disabled-opacity:        .65;
-$btn-active-box-shadow:       inset 0 3px 5px rgba($black, .125);
+$btn-focus-box-shadow:        none;
+$btn-disabled-opacity:        1;
+$btn-active-box-shadow:       none;
 
-$btn-link-disabled-color:     $gray-600;
+$btn-link-disabled-color:     $gray-90;
 
 $btn-block-spacing-y:         .5rem;
 
 // Allows for customizing button radius independently from global border radius
 $btn-border-radius:           1.57rem;
-$btn-border-radius-lg:        $border-radius-lg;
-$btn-border-radius-sm:        $border-radius-sm;
+$btn-border-radius-lg:        4.29rem;
+$btn-border-radius-sm:        $btn-border-radius;
 
 $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
 
 // Forms
 
-$label-margin-bottom:                   .5rem;
+$label-margin-bottom:                   .36rem;
 
-$input-padding-y:                       $input-btn-padding-y;
-$input-padding-x:                       $input-btn-padding-x;
+$input-padding-y:                       .79rem;
+$input-padding-x:                       1.14rem;
 $input-font-family:                     $input-btn-font-family;
-$input-font-size:                       $input-btn-font-size;
-$input-font-weight:                     $font-weight-base;
-$input-line-height:                     $input-btn-line-height;
+$input-font-size:                       1rem;
+$input-font-weight:                     500;
+$input-line-height:                     1.43;
 
-$input-padding-y-sm:                    $input-btn-padding-y-sm;
-$input-padding-x-sm:                    $input-btn-padding-x-sm;
+$input-padding-y-sm:                    .5rem;
+$input-padding-x-sm:                    .9rem;
 $input-font-size-sm:                    $input-btn-font-size-sm;
 $input-line-height-sm:                  $input-btn-line-height-sm;
 
-$input-padding-y-lg:                    $input-btn-padding-y-lg;
-$input-padding-x-lg:                    $input-btn-padding-x-lg;
+$input-padding-y-lg:                    1.2rem;
+$input-padding-x-lg:                    1.5rem;
 $input-font-size-lg:                    $input-btn-font-size-lg;
 $input-line-height-lg:                  $input-btn-line-height-lg;
 
 $input-bg:                              $white;
-$input-disabled-bg:                     $gray-200;
+$input-disabled-bg:                     $gray-95;
 
-$input-color:                           $gray-700;
-$input-border-color:                    $gray-400;
-$input-border-width:                    $input-btn-border-width;
-$input-box-shadow:                      inset 0 1px 1px rgba($black, .075);
+$input-color:                           $base;
+$input-border-color:                    $gray-75;
+$input-border-width:                    1px;
+$input-box-shadow:                      none;
 
-$input-border-radius:                   $border-radius;
-$input-border-radius-lg:                $border-radius-lg;
-$input-border-radius-sm:                $border-radius-sm;
+$input-border-radius:                   4px;
+$input-border-radius-lg:                6px;
+$input-border-radius-sm:                3px;
 
 $input-focus-bg:                        $input-bg;
-$input-focus-border-color:              lighten($component-active-bg, 25%);
+$input-focus-border-color:              $base;
 $input-focus-color:                     $input-color;
-$input-focus-width:                     $input-btn-focus-width;
-$input-focus-box-shadow:                $input-btn-focus-box-shadow;
+$input-focus-width:                     4px;
+$input-focus-box-shadow:                0 0 0 $input-focus-width $gray-95;
 
-$input-placeholder-color:               $gray-600;
+$input-placeholder-color:               $gray-75;
 $input-plaintext-color:                 $body-color;
 
 $input-height-border:                   $input-border-width * 2;
@@ -520,14 +563,29 @@ $input-height-border:                   $input-border-width * 2;
 $input-height-inner:                    add($input-line-height * 1em, $input-padding-y * 2);
 $input-height-inner-half:               add($input-line-height * .5em, $input-padding-y);
 $input-height-inner-quarter:            add($input-line-height * .25em, $input-padding-y / 2);
+$input-height-inner-sm:                 add($input-line-height-sm * 1em, $input-padding-y-sm * 2);
+$input-height-inner-lg:                 add($input-line-height-lg * 1em, $input-padding-y-lg * 2);
 
 $input-height:                          add($input-line-height * 1em, add($input-padding-y * 2, $input-height-border, false));
 $input-height-sm:                       add($input-line-height-sm * 1em, add($input-padding-y-sm * 2, $input-height-border, false));
 $input-height-lg:                       add($input-line-height-lg * 1em, add($input-padding-y-lg * 2, $input-height-border, false));
 
+$input-container-ico-size: 1.57rem;
+$input-container-ico-size-sm: 1.4rem;
+$input-container-ico-size-lg: 2.3rem;
+$input-container-ico-height: calc((#{$input-font-size} * #{$input-line-height}) + (2 * #{$input-padding-y}));
+$input-container-ico-width: $input-container-ico-height;
+$input-container-ico-height-sm: calc((#{$input-font-size-sm} * #{$input-line-height-sm}) + (2 * #{$input-padding-y-sm}));
+$input-container-ico-width-sm: $input-container-ico-height-sm;
+$input-container-ico-height-lg: calc((#{$input-font-size-lg} * #{$input-line-height-lg}) + (2 * #{$input-padding-y-lg}));
+$input-container-ico-width-lg: $input-container-ico-height-lg;
+$input-container-input-padding-right: $input-container-ico-width;
+$input-container-input-padding-right-sm: $input-container-ico-width-sm;
+$input-container-input-padding-right-lg: $input-container-ico-width-lg;
+
 $input-transition:                      border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
-$form-text-margin-top:                  .25rem;
+$form-text-margin-top:                  .36rem;
 
 $form-check-input-gutter:               1.25rem;
 $form-check-input-margin-y:             .3rem;
@@ -560,7 +618,7 @@ $custom-control-indicator-border-width: $input-border-width;
 $custom-control-label-color:            null;
 
 $custom-control-indicator-disabled-bg:          $input-disabled-bg;
-$custom-control-label-disabled-color:           $gray-600;
+$custom-control-label-disabled-color:           $gray-90;
 
 $custom-control-indicator-checked-color:        $component-active-color;
 $custom-control-indicator-checked-bg:           $component-active-bg;
@@ -601,7 +659,7 @@ $custom-select-indicator-padding:   1rem; // Extra padding to account for the pr
 $custom-select-font-weight:         $input-font-weight;
 $custom-select-line-height:         $input-line-height;
 $custom-select-color:               $input-color;
-$custom-select-disabled-color:      $gray-600;
+$custom-select-disabled-color:      $gray-90;
 $custom-select-bg:                  $input-bg;
 $custom-select-disabled-bg:         $gray-200;
 $custom-select-bg-size:             8px 10px; // In pixels because image dimensions
@@ -677,7 +735,10 @@ $custom-file-text: (
 // Form validation
 
 $form-feedback-margin-top:          $form-text-margin-top;
-$form-feedback-font-size:           $small-font-size;
+$form-feedback-font-size:           1rem;
+$form-feedback-font-weight:         500;
+$form-feedback-icon-size: 1.2rem;
+$form-feedback-icon-size-margin-right: .38rem;
 $form-feedback-valid-color:         theme-color("success");
 $form-feedback-invalid-color:       theme-color("danger");
 
@@ -720,7 +781,7 @@ $zindex-tooltip:                    1070;
 
 $nav-link-padding-y:                .5rem;
 $nav-link-padding-x:                1rem;
-$nav-link-disabled-color:           $gray-600;
+$nav-link-disabled-color:           $gray-90;
 
 $nav-tabs-border-color:             $gray-300;
 $nav-tabs-border-width:             $border-width;
@@ -801,12 +862,12 @@ $dropdown-link-hover-bg:            $gray-100;
 $dropdown-link-active-color:        $component-active-color;
 $dropdown-link-active-bg:           $component-active-bg;
 
-$dropdown-link-disabled-color:      $gray-600;
+$dropdown-link-disabled-color:      $gray-90;
 
 $dropdown-item-padding-y:           .25rem;
 $dropdown-item-padding-x:           1.5rem;
 
-$dropdown-header-color:             $gray-600;
+$dropdown-header-color:             $gray-90;
 $dropdown-header-padding:           $dropdown-padding-y $dropdown-item-padding-x;
 
 
@@ -836,7 +897,7 @@ $pagination-active-color:           $component-active-color;
 $pagination-active-bg:              $component-active-bg;
 $pagination-active-border-color:    $pagination-active-bg;
 
-$pagination-disabled-color:         $gray-600;
+$pagination-disabled-color:         $gray-90;
 $pagination-disabled-bg:            $white;
 $pagination-disabled-border-color:  $gray-300;
 
@@ -937,7 +998,7 @@ $toast-border-color:                rgba(0, 0, 0, .1);
 $toast-border-radius:               .25rem;
 $toast-box-shadow:                  0 .25rem .75rem rgba($black, .1);
 
-$toast-header-color:                $gray-600;
+$toast-header-color:                $gray-90;
 $toast-header-background-color:     rgba($white, .85);
 $toast-header-border-color:         rgba(0, 0, 0, .05);
 
@@ -1047,7 +1108,7 @@ $list-group-active-color:           $component-active-color;
 $list-group-active-bg:              $component-active-bg;
 $list-group-active-border-color:    $list-group-active-bg;
 
-$list-group-disabled-color:         $gray-600;
+$list-group-disabled-color:         $gray-90;
 $list-group-disabled-bg:            $list-group-bg;
 
 $list-group-action-color:           $gray-700;
@@ -1070,7 +1131,7 @@ $thumbnail-box-shadow:              0 1px 2px rgba($black, .075);
 // Figures
 
 $figure-caption-font-size:          90%;
-$figure-caption-color:              $gray-600;
+$figure-caption-color:              $gray-90;
 
 
 // Breadcrumbs
@@ -1084,8 +1145,8 @@ $breadcrumb-item-padding:           .5rem;
 $breadcrumb-margin-bottom:          1rem;
 
 $breadcrumb-bg:                     $gray-200;
-$breadcrumb-divider-color:          $gray-600;
-$breadcrumb-active-color:           $gray-600;
+$breadcrumb-divider-color:          $gray-90;
+$breadcrumb-active-color:           $gray-90;
 $breadcrumb-divider:                quote("/");
 
 $breadcrumb-border-radius:          $border-radius;
@@ -1188,14 +1249,14 @@ $ctrl-line-height-lg:          $ctrl-line-height;
 $ctrl-border-width:            0;
 
 $ctrl-font-weight:             $font-weight-normal;
-$ctrl-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075);
+$ctrl-box-shadow:              none;
 $ctrl-focus-width:             0;
 $ctrl-focus-box-shadow:        none;
-$ctrl-disabled-opacity:        .65;
-$ctrl-active-box-shadow:       inset 0 3px 5px rgba($black, .125);
+$ctrl-disabled-opacity:        1;
+$ctrl-active-box-shadow:       none;
 
 $ctrl-color: $body-color;
-$ctrl-link-disabled-color:     $gray-600;
+$ctrl-link-disabled-color:     $gray-90;
 $ctrl-active-color:            $blue;
 $ctrl-hover-color:             $blue;
 
