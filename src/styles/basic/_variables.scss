@@ -503,7 +503,8 @@ $btn-focus-width:             $input-btn-focus-width;
 $btn-focus-box-shadow:        none;
 $btn-disabled-opacity:        1;
 $btn-active-box-shadow:       none;
-
+$btn-disabled-bg: $gray-90;
+$btn-disabled-color: $white;
 $btn-link-disabled-color:     $gray-90;
 
 $btn-block-spacing-y:         .5rem;
@@ -779,9 +780,12 @@ $zindex-tooltip:                    1070;
 
 // Navs
 
-$nav-link-padding-y:                .5rem;
-$nav-link-padding-x:                1rem;
+$nav-link-padding-y:                0;
+$nav-link-padding-x:                .5rem;
+$nav-link-color: $base;
 $nav-link-disabled-color:           $gray-90;
+$nav-link-font-size: 1.14rem;
+$nav-link-font-weight: 600;
 
 $nav-tabs-border-color:             $gray-300;
 $nav-tabs-border-width:             $border-width;
@@ -1266,3 +1270,46 @@ $ctrl-block-spacing-y:         .5rem;
 $ctrl-border-radius:           0;
 
 $ctrl-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+// Header
+$header-padding-y: 1.43rem;
+
+// Checkboxes
+$check-input-size: 24px;
+$check-input-margin-right: 8px;
+$check-input-bg: $white;
+$check-input-border-width: 1px;
+$check-input-border-color: $gray-75;
+$check-input-border-radius: 4px;
+$check-input-bg-checked: $base;
+$check-input-ico: 'check';
+$check-input-ico-color-checked: $white;
+$check-input-ico-color-size: 1.3rem;
+$check-input-border-color-checked: $base;
+$check-input-bg-disabled: $gray-90;
+$check-input-border-color-disabled: $check-input-border-color;
+$check-label-font-size: 1rem;
+$check-label-font-weight: 500;
+$check-label-line-height: 1.43;
+$check-label-padding-left: $check-input-size + $check-input-margin-right;
+$check-label-padding-top: calc( (#{$check-input-size} / 2) - (#{$check-label-font-size} * #{$check-label-line-height} / 2) );
+
+// Radio
+$radio-input-size: $check-input-size;
+$radio-input-margin-right: $check-input-margin-right;
+$radio-input-bg: $check-input-bg;
+$radio-input-border-width: $check-input-border-width;
+$radio-input-border-color: $check-input-border-color;
+$radio-input-marker-size: 14px;
+$radio-input-inset-shadow-size: ($check-input-size - $radio-input-marker-size - (2 * $radio-input-border-width)) / 2;
+$radio-input-inset-shadow-color-checked: $check-input-ico-color-checked;
+$radio-input-marker-color-checked: $base;
+$radio-input-bg-checked: $check-input-bg-checked;
+$radio-input-border-color-checked: $check-input-border-color-checked;
+$radio-input-bg-disabled: $check-input-bg-disabled;
+$radio-input-border-color-disabled: $check-input-border-color-disabled;
+$radio-label-font-size: $check-label-font-size;
+$radio-label-font-weight: $check-label-font-weight;
+$radio-label-line-height: $check-label-line-height;
+$radio-label-padding-left: $radio-input-size + $radio-input-margin-right;
+$radio-label-padding-top: calc( (#{$radio-input-size} / 2) - (#{$radio-label-font-size} * #{$radio-label-line-height} / 2) );

@@ -71,8 +71,8 @@ $componentSelector: mbs-button;
   $background,
   $hover-background: darken($background, 7.5%),
   $active-background: darken($background, 10%),
-  $disabled-background: $gray-90,
-  $disabled-color: $white
+  $disabled-background: $btn-disabled-bg,
+  $disabled-color: $btn-disabled-color
 ) {
   color: color-yiq($background);
   background: $background;
@@ -127,7 +127,7 @@ $componentSelector: mbs-button;
 }
 
 // Button outline variants
-@mixin button-outline-variant($color, $color-hover: color-yiq($color), $active-background: $color, $active-border: $color, $disabled-color: $gray-90) {
+@mixin button-outline-variant($color, $color-hover: color-yiq($color), $active-background: $color, $active-border: $color, $disabled-color: $btn-disabled-bg) {
   color: $color;
   border-color: $color;
 
