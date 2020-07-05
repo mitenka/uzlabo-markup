@@ -111,7 +111,7 @@ $value in $theme-colors {
 
 // Make a control look and behave like a link
 .ctrl-link {
-  font-weight: $font-weight-normal;
+  font-weight: $font-weight-base;
   color: $link-color;
   text-decoration: $link-decoration;
   user-select: auto;

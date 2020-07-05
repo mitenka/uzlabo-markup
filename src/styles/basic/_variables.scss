@@ -50,6 +50,7 @@ $gray-90: #E3E6E8;
 $gray-75: #B9BEC3;
 $gray-55: #838C95;
 $base: #223344;
+$action: #2496FF;
 
 
 $colors: ();
@@ -68,7 +69,8 @@ $colors: map-merge(
     "cyan":       $cyan,
     "white":      $white,
     "gray":       $gray-55,
-    "gray-dark":  $base
+    "gray-dark":  $base,
+    "link":     $action
   ),
   $colors
 );
@@ -96,7 +98,8 @@ $theme-colors: map-merge(
     "light":      $light,
     "dark":       $dark,
     "accent": $accent,
-    "base": $base
+    "base": $base,
+    "action":     $action
   ),
   $theme-colors
 );
@@ -188,7 +191,7 @@ $body-color:                $base;
 //
 // Style anchor elements.
 
-$link-color:                              $primary;
+$link-color:                              $action;
 $link-decoration:                         none;
 $link-hover-color:                        darken($link-color, 15%);
 $link-hover-decoration:                   underline;
@@ -248,7 +251,7 @@ $max-widths: map-merge(
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:                12;
-$grid-gutter-width:           12px;
+$grid-gutter-width:           1rem;
 $grid-row-columns:            6;
 
 
@@ -357,19 +360,28 @@ $font-weight-normal:          400;
 $font-weight-bold:            700;
 $font-weight-bolder:          bolder;
 
-$font-weight-base:            $font-weight-normal;
-$line-height-base:            1.5;
+$font-weight-base:            500;
+$line-height-base:            1.43;
 
-$h1-font-size:                $font-size-base * 2.5;
+$h1-font-size:                $font-size-base * 4.29;
+$h1-line-height: 1.2;
+$h1-letter-spacing: 1px;
+
 $h2-font-size:                $font-size-base * 2;
-$h3-font-size:                $font-size-base * 1.75;
+$h2-line-height: 1.43;
+$h2-letter-spacing: .01em;
+
+$h3-font-size:                $font-size-base * 1.29;
+$h3-line-height: 1.33;
+$h3-letter-spacing: .005em;
+
 $h4-font-size:                $font-size-base * 1.5;
 $h5-font-size:                $font-size-base * 1.25;
 $h6-font-size:                $font-size-base;
 
 $headings-margin-bottom:      $spacer / 2;
 $headings-font-family:        null;
-$headings-font-weight:        500;
+$headings-font-weight:        600;
 $headings-line-height:        1.2;
 $headings-color:              null;
 
@@ -520,6 +532,9 @@ $btn-transition:              color .15s ease-in-out, background-color .15s ease
 // Forms
 
 $label-margin-bottom:                   .36rem;
+$label-color: $gray-55;
+$label-hover-color: darken($label-color, 15%);
+$label-cursor: pointer;
 
 $input-padding-y:                       .79rem;
 $input-padding-x:                       1.14rem;
@@ -596,7 +611,7 @@ $form-check-inline-margin-x:            .75rem;
 $form-check-inline-input-margin-x:      .3125rem;
 
 $form-grid-gutter-width:                10px;
-$form-group-margin-bottom:              1rem;
+$form-group-margin-bottom:              1.5rem;
 
 $input-group-addon-color:               $input-color;
 $input-group-addon-bg:                  $gray-200;
@@ -781,8 +796,9 @@ $zindex-tooltip:                    1070;
 // Navs
 
 $nav-link-padding-y:                0;
-$nav-link-padding-x:                .5rem;
+$nav-link-padding-x:                0.36rem;
 $nav-link-color: $base;
+$nav-link-hover-color: $primary;
 $nav-link-disabled-color:           $gray-90;
 $nav-link-font-size: 1.14rem;
 $nav-link-font-weight: 600;
@@ -808,7 +824,7 @@ $nav-divider-margin-y:              $spacer / 2;
 $navbar-padding-y:                  $spacer / 2;
 $navbar-padding-x:                  $spacer;
 
-$navbar-nav-link-padding-x:         .5rem;
+$navbar-nav-link-padding-x:         0.36rem;
 
 $navbar-brand-font-size:            $font-size-lg;
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
@@ -1030,7 +1046,7 @@ $badge-pill-border-radius:          10rem;
 $modal-inner-padding:               1rem;
 
 // Margin between elements in footer, must be lower than or equal to 2 * $modal-inner-padding
-$modal-footer-margin-between:       .5rem;
+$modal-footer-margin-between:       0;
 
 $modal-dialog-margin:               .5rem;
 $modal-dialog-margin-y-sm-up:       1.75rem;
@@ -1040,11 +1056,13 @@ $modal-title-line-height:           $line-height-base;
 $modal-content-color:               null;
 $modal-content-bg:                  $white;
 $modal-content-border-color:        rgba($black, .2);
-$modal-content-border-width:        $border-width;
-$modal-content-border-radius:       $border-radius-lg;
+$modal-content-border-width:        0;
+$modal-content-border-radius:       0;
 $modal-content-inner-border-radius: subtract($modal-content-border-radius, $modal-content-border-width);
-$modal-content-box-shadow-xs:       0 .25rem .5rem rgba($black, .5);
-$modal-content-box-shadow-sm-up:    0 .5rem 1rem rgba($black, .5);
+$modal-content-box-shadow-xs:       none;
+$modal-content-box-shadow-sm-up:    none;
+$modal-content-padding-top: 2rem;
+$modal-content-padding-bottom: 2.86rem;
 
 $modal-backdrop-bg:                 $black;
 $modal-backdrop-opacity:            .5;
@@ -1052,9 +1070,21 @@ $modal-header-border-color:         $border-color;
 $modal-footer-border-color:         $modal-header-border-color;
 $modal-header-border-width:         $modal-content-border-width;
 $modal-footer-border-width:         $modal-header-border-width;
-$modal-header-padding-y:            1rem;
-$modal-header-padding-x:            1rem;
+$modal-header-padding-y:            0;
+$modal-header-padding-x:            2rem;
 $modal-header-padding:              $modal-header-padding-y $modal-header-padding-x; // Keep this for backwards compatibility
+
+$modal-header-description-margin-top: 1rem;
+$modal-header-description-color: $gray-75;
+
+$modal-body-padding-top: 1.5rem;
+$modal-body-padding-x: 2.86rem;
+$modal-body-padding-bottom: 0;
+
+$modal-footer-padding-y: 0;
+$modal-footer-padding-x: $modal-body-padding-x;
+
+$modal-close-font-size: 1.75rem;
 
 $modal-xl:                          1140px;
 $modal-lg:                          800px;
@@ -1252,7 +1282,7 @@ $ctrl-line-height-lg:          $ctrl-line-height;
 
 $ctrl-border-width:            0;
 
-$ctrl-font-weight:             $font-weight-normal;
+$ctrl-font-weight:             500;
 $ctrl-box-shadow:              none;
 $ctrl-focus-width:             0;
 $ctrl-focus-box-shadow:        none;
@@ -1272,7 +1302,7 @@ $ctrl-border-radius:           0;
 $ctrl-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
 // Header
-$header-padding-y: 1.43rem;
+$header-padding-y: .93rem;
 
 // Checkboxes
 $check-input-size: 24px;
@@ -1288,6 +1318,7 @@ $check-input-ico-color-size: 1.3rem;
 $check-input-border-color-checked: $base;
 $check-input-bg-disabled: $gray-90;
 $check-input-border-color-disabled: $check-input-border-color;
+$check-label-color: $black;
 $check-label-font-size: 1rem;
 $check-label-font-weight: 500;
 $check-label-line-height: 1.43;
@@ -1308,6 +1339,7 @@ $radio-input-bg-checked: $check-input-bg-checked;
 $radio-input-border-color-checked: $check-input-border-color-checked;
 $radio-input-bg-disabled: $check-input-bg-disabled;
 $radio-input-border-color-disabled: $check-input-border-color-disabled;
+$radio-label-color: $check-label-color;
 $radio-label-font-size: $check-label-font-size;
 $radio-label-font-weight: $check-label-font-weight;
 $radio-label-line-height: $check-label-line-height;
